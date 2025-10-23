@@ -1,26 +1,98 @@
-Profile Card — Simple README
+# Personal Portfolio Website
 
-This project is a small profile card built with plain HTML, CSS and vanilla JavaScript. The code is written for clarity and to be easy to test.
+This project is a multi-page personal portfolio website built with HTML, CSS, and vanilla JavaScript. It features a profile card, contact form with validation, and an about page with personal reflections.
 
-Files
-- index.html: The whole project. It contains markup, styles, and a small script.
+## Pages
 
-How the code is organized
-- The card is wrapped in an <article> element with data-testid="test-profile-card".
-- The user name is in an <h2> with data-testid="test-user-name".
-- The biography is in a <p> with data-testid="test-user-bio".
-- The current time is shown in the element with data-testid="test-user-time". The script writes Date.now() (milliseconds) and updates it every second.
-- The avatar is inside a <figure>. The <img> element includes data-testid="test-user-avatar" and has an alt attribute.
-- Social links are in a <ul> with data-testid="test-user-social-links". Each link opens in a new tab (target="_blank") and uses rel="noopener noreferrer" for security.
-- Hobbies and dislikes are two lists inside separate <section> elements with data-testid="test-user-hobbies" and data-testid="test-user-dislikes".
+### 1. Profile Card (index.html)
+- Displays personal information in a card layout
+- Features:
+  - User name with `test-user-name`
+  - Biography with `test-user-bio`
+  - Live-updating timestamp with `test-user-time`
+  - Profile avatar with `test-user-avatar`
+  - Social links list with `test-user-social-links`
+  - Hobbies section with `test-user-hobbies`
+  - Dislikes section with `test-user-dislikes`
 
-Accessibility and behavior notes
-- All interactive items (links) are keyboard-focusable. Focus styles are provided so keyboard users can see where focus is.
-- The layout is responsive. On small screens the content stacks vertically and the hobbies/dislikes wrap into badge-like items.
-- The time is updated using Date.now() so automated tests can read a millisecond timestamp.
+### 2. Contact Page (Contact.html)
+- Interactive contact form with validation
+- Features:
+  - Required fields:
+    - Full name (`test-contact-name`)
+    - Email (`test-contact-email`)
+    - Subject (`test-contact-subject`)
+    - Message (`test-contact-message`)
+  - Form validation:
+    - All fields required
+    - Email format validation
+    - Message minimum length: 10 characters
+  - Error messages (`test-contact-error-<field>`)
+  - Success message (`test-contact-success`)
+  - Submit button (`test-contact-submit`)
 
-How to view locally
-1. Open the folder in your file explorer.
-2. Double-click `index.html` or open it with your browser.
+### 3. About Page (About.html)
+- Personal reflection and goals
+- Sections:
+  - Bio (`test-about-bio`)
+  - Goals in the program (`test-about-goals`)
+  - Areas of low confidence (`test-about-confidence`)
+  - Note to future self (`test-about-future-note`)
+  - Extra thoughts (`test-about-extra`)
 
-No build step is required. The project runs in any modern browser.
+## Technical Features
+
+### Accessibility
+- ARIA labels and descriptions
+- Proper heading hierarchy
+- Keyboard navigation support
+- Form input labels and error associations
+- Alt text for images
+- Semantic HTML structure
+
+### Responsive Design
+- Mobile-first approach
+- Flexible layouts
+- Responsive typography
+- Touch-friendly interactions
+- Adaptive navigation
+
+### Form Validation
+- Real-time validation
+- Clear error messages
+- Accessible error notifications
+- Success confirmation
+- Email format checking
+- Minimum length requirements
+
+### Performance
+- Vanilla JavaScript
+- No external dependencies
+- Optimized assets
+- Minimal CSS
+
+## How to Run
+
+1. Clone the repository
+2. Open any of the HTML files in a modern web browser:
+   - `index.html` for the profile card
+   - `Contact.html` for the contact form
+   - `About.html` for the about page
+
+No build step or server required. The project runs directly in any modern browser.
+
+## Testing
+
+Each interactive element has a `data-testid` attribute for automated testing:
+- Profile elements: `test-user-*`
+- Contact form: `test-contact-*`
+- About sections: `test-about-*`
+
+## Browser Support
+
+Tested and working in:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
