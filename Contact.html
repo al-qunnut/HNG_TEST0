@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       
+*{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: aqua;
+        min-height: 100vh;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav {
+        background-color: rgb(22, 79, 105);
+        color: white;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: center;
+        padding: 12px 24px;
+        width: 100vw;
+      }
+
+      nav h1 {
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      nav ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 18px;
+        padding: 18px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 6px;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      nav ul li a:hover {
+        background: rgba(255,255,255,0.1);
+        transform: translateY(-2px);
+      }
+      
+      form {
+        background-color: aliceblue;
+        justify-items: center;
+        align-items: center;
+        padding: 40px;
+        margin: 24px;
+        max-width: 980px;
+        width: 100%;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        transition: transform 200ms ease, box-shadow 200ms ease;
+      }
+
+      form:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+      }
+
+      form h1 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+        font-weight: bold;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: left;
+      }
+
+      form label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      form input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+      }
+
+      form input:focus, textarea:focus {
+        outline: none;
+        border-color: rgb(22, 79, 105);
+        box-shadow: 0 0 0 3px rgba(22, 79, 105, 0.2);
+      }
+
+      button {
+        background-color: rgb(22, 79, 105);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+      }
+
+      button:hover {
+        background-color: rgb(28, 98, 130);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+
+      button:focus,
+      button:focus-visible {
+        outline: 3px solid rgba(21, 156, 228, 0.9);
+        outline-offset: 3px;
+        box-shadow: 0 6px 18px rgba(21,156,228,0.12);
+      }
+
+      .error-message {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 4px;
+        display: none;
+      }
+
+      .error-message.visible {
+        display: block;
+      }
+
+      .success-message {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        text-align: center;
+        display: none;
+      }
+
+      .success-message.visible {
+        display: block;
+      }
+
+      input.error, textarea.error {
+        border-color: #dc3545;
+      }
+
+      input.error:focus, textarea.error:focus {
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+      }
+
+      @media (max-width: 760px) {
+        form {
+          margin: 16px;
+          padding: 24px;
+        }
+
+        form h1 {
+          font-size: 1.6rem;
+          text-align: center;
+        }
+
+        nav {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding: 12px;
+        }
+
+        nav ul {
+          margin-top: 12px;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        form {
+          margin: 12px;
+          padding: 20px;
+        }
+
+        nav h1 {
+          font-size: 1.2rem;
+        }
+
+        nav ul {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 12px;
+        }
+      }
+
+      </style>
+
+      <main> 
+        
+        <nav aria-label="User Profile Card">
+        <h1>Oshodilawal Al-Qunnut</h1>
+
+        <ul>
+          <li><a href="./index.html">Profile</a></li>
+          <li><a href="./Contact.html">Contact </a></li>
+          <li><a href="./About.html">About</a></li>
+        </ul>
+        
+      </nav>
+
+      
+        <form action="/submit_contact" method="post" id="contactForm">
+          <h1>Contact</h1>
+
+          <div class="success-message" data-testid="test-contact-success">
+            Thank you! Your message has been sent successfully.
+          </div>
+
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" data-testid="test-contact-name" required placeholder="Enter your name" aria-describedby="nameError">
+            <div id="nameError" class="error-message" data-testid="test-contact-error-name">Please enter a valid name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" data-testid="test-contact-email" required placeholder="Enter your email" aria-describedby="emailError">
+            <div id="emailError" class="error-message" data-testid="test-contact-error-email">Please enter a valid email address</div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" data-testid="test-contact-subject" required placeholder="Enter subject" aria-describedby="subjectError">
+            <div id="subjectError" class="error-message" data-testid="test-contact-error-subject">Please enter a subject</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" data-testid="test-contact-message" required placeholder="Enter your message (minimum 10 characters)" aria-describedby="messageError" minlength="10"></textarea>
+            <div id="messageError" class="error-message" data-testid="test-contact-error-message">Please enter a message (minimum 10 characters)</div>
+          </div>
+            
+          <button type="submit" data-testid="test-contact-submit">Send Message</button>
+
+        </form>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const inputs = form.querySelectorAll('input, textarea');
+        const successMessage = document.querySelector('[data-testid="test-contact-success"]');
+
+        // Function to validate email
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+
+        // Function to show error
+        function showError(field, show) {
+          const errorElement = document.querySelector(`[data-testid="test-contact-error-${field}"]`);
+          const inputElement = document.querySelector(`[data-testid="test-contact-${field}"]`);
+          
+          if (show) {
+            errorElement.classList.add('visible');
+            inputElement.classList.add('error');
+          } else {
+            errorElement.classList.remove('visible');
+            inputElement.classList.remove('error');
+          }
+        }
+
+        // Handle input validation on blur
+        inputs.forEach(input => {
+          input.addEventListener('blur', function() {
+            const field = this.getAttribute('data-testid').replace('test-contact-', '');
+            
+            if (this.value.trim() === '') {
+              showError(field, true);
+            } else if (field === 'email' && !isValidEmail(this.value)) {
+              showError(field, true);
+            } else if (field === 'message' && this.value.length < 10) {
+              showError(field, true);
+            } else {
+              showError(field, false);
+            }
+          });
+
+          // Clear error on input
+          input.addEventListener('input', function() {
+            const field = this.getAttribute('data-testid').replace('test-contact-', '');
+            showError(field, false);
+          });
+        });
+
+        // Handle form submission
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          let hasErrors = false;
+
+          // Validate all fields
+          inputs.forEach(input => {
+            const field = input.getAttribute('data-testid').replace('test-contact-', '');
+            
+            if (input.value.trim() === '') {
+              showError(field, true);
+              hasErrors = true;
+            } else if (field === 'email' && !isValidEmail(input.value)) {
+              showError(field, true);
+              hasErrors = true;
+            } else {
+              showError(field, false);
+            }
+          });
+
+          if (!hasErrors) {
+            // Show success message
+            successMessage.classList.add('visible');
+            
+            // Clear form
+            form.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              successMessage.classList.remove('visible');
+            }, 5000);
+          }
+        });
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: aqua;
+        min-height: 100vh;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav {
+        background-color: rgb(22, 79, 105);
+        color: white;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: center;
+        padding: 12px 24px;
+        width: 100vw;
+      }
+
+      nav h1 {
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      nav ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 18px;
+        padding: 18px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 6px;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+      
+      
+      article {
+        background-color: aliceblue;
+        justify-items: center;
+        align-items: center;
+        padding: 28px;
+        margin: 24px;
+        max-width: 980px;
+        width: 100%;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        transition: transform 200ms ease, box-shadow 200ms ease;
+      }
+
+      article:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+      }
+
+      section {
+        margin-bottom: 2rem;
+        padding: 12px;
+      }
+
+      h2 {
+        color: rgb(22, 79, 105);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid rgba(22, 79, 105, 0.1);
+        padding-bottom: 0.5rem;
+      }
+
+      p {
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 760px) {
+        article {
+          margin: 16px;
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        nav {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding: 12px;
+        }
+
+        nav ul {
+          margin-top: 12px;
+        }
+      }
+
+      </style>
+
+      <main data-testid="test-about-page"> 
+        
+        <nav aria-label="User Profile Card">
+        <h1>Oshodilawal Al-Qunnut</h1>
+
+        <ul>
+          <li><a href="./index.html">Profile</a></li>
+          <li><a href="./Contact.html">Contact </a></li>
+          <li><a href="./About.html">About</a></li>
+        </ul>
+        
+      </nav>
+
+      <article>
+
+        <h2>About Me</h2>
+        <section data-testid="test-about-bio">
+          <p>I'm a curious mind and creative thinker who loves bringing ideas to life through clean, user-focused web experiences. I enjoy turning concepts into interactive designs that feel intuitive and engaging. Beyond code, I’m passionate about collaboration, continuous learning, and building digital solutions that make an impact.</p>
+        </section>
+
+        <section data-testid="test-about-goals">
+          <h2>Goals in this Program</h2>
+          <ul>
+           <li>I want to gain real, hands-on experience working on actual projects - not just tutorials.</li>
+           <li>I'm looking to sharpen my frontend skills and learn how things are done in real teams.</li>
+           <li>I hope to learn from mentors who've been in the field and can guide me to grow faster.</li>
+           <li>I want to collaborate with other creative developers and share ideas.</li>
+           <li>I'm excited to build better habits - staying consistent, solving problems, and meeting deadlines.</li>
+           <li>I'd love to improve the way I think through challenges and write cleaner, more efficient code.</li>
+           <li>I see this as a chance to connect with people who share the same passion for tech.</li>
+           <li>Most of all, I want to leave HNG as a more confident, skilled, and ready-to-work developer.</li>
+         </ul>
+
+        </section>
+
+        <section data-testid="test-about-confidence">
+          <h2>Areas of Low Confidence</h2>
+          <ul>
+            <li>Complex state management in large-scale applications</li>
+            <li>Advanced testing strategies and test-driven development</li>
+            <li>Performance optimization and debugging</li>
+            <li>Working with legacy code and refactoring</li>
+            <li>Advanced CSS animations and transitions</li>
+          </ul>
+        </section>
+
+        <section data-testid="test-about-future-note">
+          <h2>Note to Future Self</h2>
+          <p>I hope you're proud of how far you've come. Remember the days you doubted yourself but still showed up, learned one more thing, and wrote one more line of code. You've grown - not just in skill, but in patience, consistency, and courage. Keep that spark alive. </p>
+          <p>Don't lose the curiosity that got you started or the passion that kept you going. Keep building, keep learning, and keep believing that every small step counts. The journey isn't just about becoming a better developer - it's about becoming a better you.</p>
+        </section>
+
+        <section data-testid="test-about-extra">
+          <h2>Extra Thoughts</h2>
+          <p>Keep dreaming, keep evolving, stay persistent, take time to reflect, and never stop building.</p>
+        </section>
+      </article>
+
+      </main>
+</body>
+</html>
